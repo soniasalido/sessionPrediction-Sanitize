@@ -17,9 +17,7 @@
 
         }else{
             echo "<script>alert('ERROOOR. TOKEN NO SE PUEDE CAMBIAR')</script>";
-            session_unset();
-            session_destroy();
-            echo "<script>window.location='index.php'</script>";
+            echo "<script>window.location='bloquearUsuario.php'</script>";
         }
 
         echo "<hr>";
