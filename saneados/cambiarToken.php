@@ -2,8 +2,6 @@
 
     session_start();
     $tokenCambiado = md5(uniqid(rand(), TRUE));
-    $_SESSION['token'] = $$tokenCambiado;
-    $mierda = $tokenCambiado;
-
+    $_SESSION['token'] = $tokenCambiado;
 
     echo "<script>window.location='menu.php'</script>";
