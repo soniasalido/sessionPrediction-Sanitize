@@ -23,6 +23,10 @@
 
         include 'mostrarDatosUsuario.php';
 
+        echo "<a href='menu.php'><button>Menu</button></a>";
+        echo "<a href='cambiarPassword.php'><button>Cambiar Password</button></a>";
+        echo "<a href='fin.php'><button>Cerrar sesión</button></a>";
+
 ?>
 
 
