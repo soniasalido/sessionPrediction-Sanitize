@@ -17,7 +17,7 @@
                 $conn = new PDO("mysql:host=localhost:3306;dbname=$database", $username, $password);
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $conn-> query("SET NAMES 'utf8'");
-                $stmt = $conn->prepare("SELECT User FROM usuarios WHERE User = ? and Pass = ? and bloqueado='No' ");
+                $stmt = $conn->prepare("SELECT User, bloqueao FROM usuarios WHERE User = ? and Pass = ? ");
                 $stmt->bindParam(1, $user);
                 $stmt->bindParam(2, $pass);
                 $stmt->execute();
@@ -25,7 +25,8 @@
                 if ( $stmt->rowCount() > 0 ) {
                     $row = $stmt->fetch(PDO::FETCH_ASSOC);
                     $user = $row['User'];
-                    return $user;
+                    $bloqueado = $row['bloqueao'];
+                    return array($user, $bloqueado);
                 }else{
                     return false;
                 }
@@ -71,9 +72,10 @@
         $pass = $_POST['pass'];
         $_SESSION['userName'] = $_POST['user'];
 
-        $userIdentificado = obtenerUser($user, $pass);
+        $identificacion = obtenerUser($user, $pass);
 
-        if ($userIdentificado != false) {
+
+        if (($identificacion[0]!=null) & ($identificacion[1]==='No')) {
             $token = md5(uniqid(rand(), TRUE));
             $_SESSION['token'] = $token;
         }else{
