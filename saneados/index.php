@@ -7,8 +7,7 @@
     <?php
         session_start();
         // Se Actualiza el id de sesión actual con uno generado más reciente. Esto protege de ataques de fijación de sesión
-        // Se borra el archivo asociado a la sesión antigua
-        session_regenerate_id( true, $delete_old_session = true );
+        session_regenerate_id();
     ?>
 
 
