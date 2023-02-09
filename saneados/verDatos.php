@@ -13,17 +13,18 @@
 
         if ($verificado) {
             echo "<h1>Token verificado se muestran los datos de usuario</h1>";
+            include 'mostrarDatosUsuario.php';
 
         }else{
             echo "<script>alert('ERROOOR. TOKEN NO SE PUEDE CAMBIAR')</script>";
-            echo "<script>window.location='index.php'</script>";
             session_unset();
             session_destroy();
+            echo "<script>window.location='index.php'</script>";
         }
 
         echo "<hr>";
 
-        include 'mostrarDatosUsuario.php';
+
 
         echo '<br/>';
         echo "<a href='menu.php'><button>Menu</button></a>";
