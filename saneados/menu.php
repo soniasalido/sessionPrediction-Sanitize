@@ -8,7 +8,7 @@
 <?php
 
     session_start();
-    $_SERVER;
+    include 'compruebaSesion.php';
 
     comprobarSession();
 
