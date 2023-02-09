@@ -1,7 +1,6 @@
 <?php
     session_start();
 
-
     try
     {
         $database = 'demos';
@@ -26,7 +25,4 @@
         return false;
     }
 
-
-    session_unset();
-    session_destroy();
     echo "<script>window.location='fin.php'</script>";

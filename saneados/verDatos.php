@@ -6,31 +6,28 @@
 <body>
 
 <?php
-        session_start();
-        include 'compruebaSesion.php';
-        include 'compruebaToken.php';
+    session_start();
+    include 'compruebaSesion.php';
+    include 'compruebaToken.php';
 
 
-        if ($verificado) {
-            echo "<h1>Token verificado se muestran los datos de usuario</h1>";
-            include 'mostrarDatosUsuario.php';
+    if ($verificado) {
+        echo "<h1>Token verificado se muestran los datos de usuario</h1>";
+        include 'mostrarDatosUsuario.php';
 
-        }else{
-            echo "<script>alert('ERROOOR. TOKEN NO SE PUEDE CAMBIAR')</script>";
-            echo "<script>window.location='bloquearUsuario.php'</script>";
-        }
+    }else{
+        echo "<script>alert('ERROOOR. TOKEN NO SE PUEDE CAMBIAR')</script>";
+        echo "<script>window.location='bloquearUsuario.php'</script>";
+    }
 
-        echo "<hr>";
-
-
-
-        echo '<br/>';
-        echo "<a href='menu.php'><button>Menu</button></a>";
-        echo "<a href='cambiarPassword.php'><button>Cambiar Password</button></a>";
-        echo "<a href='fin.php'><button>Cerrar sesión</button></a>";
+    echo "<hr>";
 
 ?>
-
+    <br>
+    <a href='menu.php'><button>Volver al menú</button></a>;
+    <a href='cambiarPassword.php'><button>Cambiar Password</button></a>;
+    <a href='cambiarToken.php'><button>Cambiar Token</button></a>;
+    <a href='fin.php'><button>Cerrar sesión</button></a>;
 
 </body>
 </html>

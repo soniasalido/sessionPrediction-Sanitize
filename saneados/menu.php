@@ -6,7 +6,6 @@
 <body>
 
 <?php
-
     session_start();
     include 'compruebaSesion.php';
 
@@ -18,16 +17,12 @@
     echo "<p>El usuario es: " . $_SESSION['userName'];
     echo "<p>El Token es: " . $_SESSION['token'];
 
-
-
-    echo "<a href='verDatos.php'><button>Ver Datos Usuario</button></a>";
-    echo "<a href='cambiarPassword.php'><button>Cambiar Password</button></a>";
-    echo "<a href='fin.php'><button>Cerrar sesión</button></a>";
-    echo "<a href='cambiarToken.php'><button>Cambiar Token</button></a>";
-
-
 ?>
 
+    <a href='verDatos.php'><button>Ver Datos Usuario</button></a>;
+    <a href='cambiarPassword.php'><button>Cambiar Password</button></a>;
+    <a href='cambiarToken.php'><button>Cambiar Token</button></a>;
+    <a href='fin.php'><button>Cerrar sesión</button></a>;
 
 </body>
 </html>
