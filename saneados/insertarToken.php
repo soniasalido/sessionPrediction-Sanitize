@@ -1,8 +1,8 @@
 <?php
 
-// Inserta el token en la BD
-
-try
+// Función que inserta el token en la BD
+function insertarToken(){
+    try
     {
         $database = 'demos';
         $username = 'root';
@@ -27,7 +27,7 @@ try
         echo 'RROR!!! Excepción capturada: ',  $e->getMessage(), "\n";
         return false;
 
+    }
 }
-
 
 
