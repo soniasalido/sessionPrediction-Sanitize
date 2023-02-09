@@ -18,6 +18,7 @@
             $id = $row['id'];
             $user = $row['User'];
             echo "ID del Usuario" . $id;
+            echo'<br/>';
             echo "Nombre del Usuario:" . $user;
         }else{
             echo '<script>alert("ERROR!!!xxxxxxxxx.")</script>';
