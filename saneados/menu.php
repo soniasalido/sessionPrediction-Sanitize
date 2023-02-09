@@ -20,7 +20,6 @@
 ?>
 
     <a href='verDatos.php'><button>Ver Datos Usuario</button></a>
-    <a href='cambiarPassword.php'><button>Cambiar Password</button></a>
     <a href='cambiarToken.php'><button>Cambiar Token</button></a>
     <a href='fin.php'><button>Cerrar sesión</button></a>
 
