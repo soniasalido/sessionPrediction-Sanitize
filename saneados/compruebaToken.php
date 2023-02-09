@@ -19,7 +19,7 @@
         if ( $stmt->rowCount() > 0 ) {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             $token = $row['token'];
-            $token == $_SESSION['user'] ? $verificado = true : $verificado = false;
+            $token == $_SESSION['token'] ? $verificado = true : $verificado = false;
         }
     } catch (Exception $e)
     {

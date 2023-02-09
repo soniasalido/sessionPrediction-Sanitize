@@ -75,7 +75,7 @@
 
         if ($userIdentificado != false) {
             $token = md5(uniqid(rand(), TRUE));
-            $_SESSION['user'] = $token;
+            $_SESSION['token'] = $token;
         }else{
             echo "<script>alert('ERROR!!! Usuario no encontrado.')</script>";
             echo "<script>window.location='index.php'</script>";

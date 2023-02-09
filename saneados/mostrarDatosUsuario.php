@@ -10,7 +10,7 @@
         $conn-> query("SET NAMES 'utf8'");
         $stmt = $conn->prepare("SELECT id, User FROM usuarios WHERE User = ? and token = ? ");
         $stmt->bindParam(1, $_SESSION['userName']);
-        $stmt->bindParam(2, $_SESSION['user']);
+        $stmt->bindParam(2, $_SESSION['token']);
         $stmt->execute();
 
         if ( $stmt->rowCount() > 0 ) {

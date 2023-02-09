@@ -12,7 +12,7 @@
     <?php
         session_start();
         session_regenerate_id();
-        if (isset($_SESSION['user']) && $_SESSION['user'] != null) {
+        if (isset($_SESSION['userName']) && $_SESSION['token'] != null) {
             echo "<script>alert('Ya has iniciado la sesión. No puedes estar aqui');</script>";
             echo "<script> window.location='verDatos.php';</script>";
         }

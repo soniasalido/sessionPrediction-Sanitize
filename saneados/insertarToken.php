@@ -10,7 +10,7 @@ function insertarToken(){
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $conn-> query("SET NAMES 'utf8'");
         $stmt = $conn->prepare("UPDATE usuarios SET token='?' WHERE id='?';");
-        $stmt->bindParam(1, $_SESSION['user']);
+        $stmt->bindParam(1, $_SESSION['token']);
         $stmt->bindParam(2, $_SESSION['userName']);
         $stmt->execute();
 
