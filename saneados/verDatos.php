@@ -10,8 +10,6 @@
         include 'compruebaSesion.php';
         include 'compruebaToken.php';
 
-        comprobarSession();
-
 
         if ($verificado) {
             echo "<h1>Token verificado se muestran los datos de usuario</h1>";

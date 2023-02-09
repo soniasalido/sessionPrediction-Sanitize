@@ -2,7 +2,6 @@
 
     include 'compruebaSesion.php';
 
-    comprobarSession();
 
     try
     {
