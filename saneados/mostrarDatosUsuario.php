@@ -1,5 +1,9 @@
 <?php
 
+    include 'compruebaSesion.php';
+
+    comprobarSession();
+
     try
     {
         $database = 'demos';
