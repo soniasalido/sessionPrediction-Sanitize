@@ -1,8 +1,5 @@
 <?php
 
-    include 'compruebaSesion.php';
-
-
     try
     {
         $database = 'demos';
