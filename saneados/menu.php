@@ -10,7 +10,7 @@
     session_start();
     include 'compruebaSesion.php';
 
-    comprobarSession();
+    //comprobarSession();
 
     echo "<hr>";
     echo "<h3>Estos son los datos de la sesión:</h3>";
@@ -18,9 +18,7 @@
     echo "<p>Identificador de la sesión: " . session_id()."</p>";
     echo "<p>El usuario es: " . $_SESSION['userName'];
     echo "<p>El Token es: " . $_SESSION['token'];
-    foreach ($_SESSION as $index => $value) {
-        echo __FILE__ . __LINE__ . " $index: $value<br>";
-    }
+
 
 
     echo "<a href='verDatos.php'><button>Ver Datos Usuario</button></a>";
