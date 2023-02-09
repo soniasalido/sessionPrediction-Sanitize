@@ -17,7 +17,7 @@
                 $conn = new PDO("mysql:host=localhost:3306;dbname=$database", $username, $password);
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $conn-> query("SET NAMES 'utf8'");
-                $stmt = $conn->prepare("SELECT User, bloqueao FROM usuarios WHERE User = ? and Pass = ? ");
+                $stmt = $conn->prepare("SELECT User FROM usuarios WHERE User = ? and Pass = ? and bloqueado='No' ");
                 $stmt->bindParam(1, $user);
                 $stmt->bindParam(2, $pass);
                 $stmt->execute();
@@ -25,8 +25,7 @@
                 if ( $stmt->rowCount() > 0 ) {
                     $row = $stmt->fetch(PDO::FETCH_ASSOC);
                     $user = $row['User'];
-                    $bloqueado = $row['bloqueao'];
-                    return array($user, $bloqueado);
+                    return $user;
                 }else{
                     return false;
                 }
@@ -72,14 +71,13 @@
         $pass = $_POST['pass'];
         $_SESSION['userName'] = $_POST['user'];
 
-        $identificacion = obtenerUser($user, $pass);
+        $userIdentificado = obtenerUser($user, $pass);
 
-
-        if (($identificacion[0]!=null) && ($identificacion[1]==='No')) {
+        if ($userIdentificado != false) {
             $token = md5(uniqid(rand(), TRUE));
             $_SESSION['token'] = $token;
         }else{
-            echo "<script>alert('ERROR!!! Usuario no encontrado.')</script>";
+            echo "<script>alert('ERROR!!! Usuario no encontrado o bloqueado.')</script>";
             echo "<script>window.location='index.php'</script>";
         }
 
