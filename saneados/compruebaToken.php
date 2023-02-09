@@ -2,6 +2,7 @@
 
     $verificado = false;
 
+    // Comprobación de que el token de la sesión es el mismo que el que se guardó en la BD
     try
     {
         $database = 'demos';
