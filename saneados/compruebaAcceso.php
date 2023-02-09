@@ -17,7 +17,7 @@
                 $conn = new PDO("mysql:host=localhost:3306;dbname=$database", $username, $password);
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $conn-> query("SET NAMES 'utf8'");
-                $stmt = $conn->prepare("SELECT User FROM usuarios WHERE User = ? and Pass = ? ");
+                $stmt = $conn->prepare("SELECT User FROM usuarios WHERE User = ? and Pass = ? and bloqueado='No' ");
                 $stmt->bindParam(1, $user);
                 $stmt->bindParam(2, $pass);
                 $stmt->execute();
