@@ -17,6 +17,8 @@
         }else{
             echo "<script>alert('ERROOOR. TOKEN NO SE PUEDE CAMBIAR')</script>";
             echo "<script>window.location='index.php'</script>";
+            session_unset();
+            session_destroy();
         }
 
         echo "<hr>";
