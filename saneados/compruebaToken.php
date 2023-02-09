@@ -1,5 +1,7 @@
 <?php
 
+    comprobarSession();
+
     $verificado = false;
     try
     {

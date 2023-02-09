@@ -1,6 +1,8 @@
 
 <?php
 
+    comprobarSession();
+
     function comprobarSession(){
         if (isset($_SESSION['user'])) {
             echo "<h1>Bienvenido: ".$_SESSION['user']."</h1>";
