@@ -75,7 +75,7 @@
         $identificacion = obtenerUser($user, $pass);
 
 
-        if (($identificacion[0]!=null) & ($identificacion[1]==='No')) {
+        if (($identificacion[0]!=null) && ($identificacion[1]==='No')) {
             $token = md5(uniqid(rand(), TRUE));
             $_SESSION['token'] = $token;
         }else{
