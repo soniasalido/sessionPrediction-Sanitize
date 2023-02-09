@@ -10,7 +10,7 @@
     session_start();
     include 'compruebaSesion.php';
 
-    //comprobarSession();
+    comprobarSession();
 
     echo "<hr>";
     echo "<h3>Estos son los datos de la sesión:</h3>";
