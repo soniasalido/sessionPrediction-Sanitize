@@ -10,7 +10,7 @@
     include 'compruebaSesion.php';
     include 'compruebaToken.php';
 
-    // Se comprueba que el token de la sesión es el mismo que el que se guardó en la BD
+    // Chek that the token is the same that was saved in the DB
     if ($verificado) {
         echo "<h1>Token verificado se muestran los datos de usuario</h1>";
         include 'mostrarDatosUsuario.php';

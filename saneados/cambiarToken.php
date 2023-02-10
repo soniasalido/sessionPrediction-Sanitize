@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-    // Se cambia el token de la sesión como si hubieramos sufrido un secuestro de sesión
+    // Change token session as if we had suffered a session kidnapping
     $tokenCambiado = md5(uniqid(rand(), TRUE));
     $_SESSION['token'] = $tokenCambiado;
 

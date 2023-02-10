@@ -1,7 +1,7 @@
 
 
 <?php
-    //Función que comprueba si el usuario existe en la base de datos y NO está bloqueado
+    // Function that checks if the user exists in the database and is NOT blocked
     function obtenerUser($user, $pass)
     {
         try
@@ -32,7 +32,7 @@
     }
 
 
-    //Función que inserta el token en la base de datos
+    // Function that inserts the token in the database
     function insertarToken($miToken, $miUser){
         try
         {
@@ -62,17 +62,16 @@
         }
     }
 
-
-    //Obtenemos los datos del formulario
+    //Get the data from the form
     $user = $_POST['user'];
     $pass = $_POST['pass'];
 
-    //Llamamos a la función que comprueba el usuario
+    //Call the function that checks the user
     $userIdentificado = obtenerUser($user, $pass);
 
 
-    //Si el usuario existe y no está bloqueado, creamos la sesión, el token que se guardará en la BD
-    //Se redirige a la página de menú
+    // If the user exists and is NOT blocked, we create the session, the token that will be saved in the DB
+    // We redirect to the menu page
     if ($userIdentificado != false) {
         session_start();
         $_SESSION['userName'] = $_POST['user'];

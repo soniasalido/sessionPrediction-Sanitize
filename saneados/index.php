@@ -6,7 +6,7 @@
 <body>
     <?php
         session_start();
-        // Se Actualiza el id de sesión actual con uno generado más reciente. Esto protege de ataques de fijación de sesión
+        // Update actual session id with a newly generated one. This is to protect against session fixation attacks.
         session_regenerate_id();
     ?>
 
@@ -17,15 +17,14 @@
         <input type="submit">
     </form>
 
-
     <?php
-        // Si la sesión ya está iniciada, el usuario NO puede estar aquí & Se redirige al usuario a la página de verDatos.php
+        // If the session is started, the user can be here & the user is redirected to the login page.
+        // Redirect to verDatos.php
         if (isset($_SESSION['userName'])) {
             echo "<script>alert('Ya has iniciado la sesión. No puedes estar aqui');</script>";
-            echo "<script> window.location='verDatos.php';</script>";
+            echo "<script> window.location='menu.php';</script>";
         }
     ?>
-
 
 </body>
 </html>

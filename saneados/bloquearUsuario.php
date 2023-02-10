@@ -13,7 +13,7 @@
         $stmt->bindParam(1, $_SESSION['userName']);
         $stmt->execute();
 
-        //Verificamos que el insert haya realizado
+        //Chek if the process was successful
         if ($stmt){
             echo "<script>alert('Usuario BLoqueado')</script>";
 
